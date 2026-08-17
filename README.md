@@ -20,11 +20,11 @@ Repositorio con la resolución de los trabajos prácticos de la materia **Progra
 
 ## Datos del alumno
 
-- **Apellido y nombre:** 
-- **Legajo:** 
-- **Curso / Comisión:** 
-- **Docente:** 
-- **Año:** 
+- **Apellido y nombre: Ignacio Daniel Sandes** 
+- **Legajo: 1167253** 
+- **Curso / Comisión: Algoritmos y estructura de datos 1** 
+- **Docente: Mariano D.Francisco ** 
+- **Año: 2** 
 
 ## Objetivo del repositorio
 
