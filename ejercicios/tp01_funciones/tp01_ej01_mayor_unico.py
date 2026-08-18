@@ -30,8 +30,8 @@ def _mayor_unico(num, num1, num2):
 
 def main() -> None:
     """
-    contrato: Pide tres numeros a el usuario y muestra el mayor unico
-    precondiciones: Se tiene que ejecutar como programa principal
+    Contrato: Pide tres numeros a el usuario y muestra el mayor unico
+    Precondiciones: Se tiene que ejecutar como programa principal
     postcondiciones: Muestra por pantalla el mayor unico, en caso de no haber muestra un -1
     """
 
