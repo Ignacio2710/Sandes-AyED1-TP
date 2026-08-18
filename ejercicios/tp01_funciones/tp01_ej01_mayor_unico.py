@@ -28,14 +28,24 @@ def _mayor_unico(num, num1, num2):
 
     return numero_mayor        
 
-num = int(input("Ingrese un numero entero que sea positivo: "))
-num1 = int(input("Ingresa tu segundo numero entero y positivo: "))
-num2 = int(input("Ingreesa tu tercer numero entero y positivo: "))
+def main() -> None:
+    """
+    contrato: Pide tres numeros a el usuario y muestra el mayor unico
+    precondiciones: Se tiene que ejecutar como programa principal
+    postcondiciones: Muestra por pantalla el mayor unico, en caso de no haber muestra un -1
+    """
 
-resultado = _mayor_unico(num, num1, num2)
+    num = int(input("Ingresa un numero entero que sea positivo: "))
+    num1 = int(input("Ingresa tu segundo numero entero y positivo: "))
+    num2 = int(input("Ingresa tu tercer numero entero y positivo: "))
 
-if resultado == -1:
-    print(f"No existe mayor unico:{_mayor_unico(num, num1, num2)}")
+    resultado = _mayor_unico(num, num1, num2)
 
-else:
-    print(f"El mayor y unico es: {_mayor_unico(num, num1, num2)}")
+    if resultado == -1:
+        print(f"No existe mayor unico:{_mayor_unico(num, num1, num2)}")
+
+    else:
+        print(f"El mayor y unico es: {resultado}")
+
+if __name__ == "__main__":
+    main()
