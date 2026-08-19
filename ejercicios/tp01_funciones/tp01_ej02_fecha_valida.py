@@ -105,10 +105,6 @@ def _dia_delaño (dia, mes, año):
 
     return False
 
-
-"""< >"""
-
-
 def _verificar_fecha(dia, mes, año):
 
     """
