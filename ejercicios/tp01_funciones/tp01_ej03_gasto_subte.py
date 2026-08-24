@@ -2,6 +2,7 @@
 # Este programa calcula el gasto mensaul en subte segun la cantidad de viajes.
 
 def _ingresar_entero_no_negativo(mensaje: str) -> int:
+    
     """
     Contrato:
         Pide al usuario un numero entero mayor o igual a cero hasta que se ingrese uno valido.
@@ -70,6 +71,7 @@ def main() -> None:
     Postcondiciones: 
         muestra por pantalla el gasto total por viajes de subte.
     """
+
     viajes = _ingresar_entero_no_negativo("Los viajes que realize este mes son: ")
 
     gasto_por_viaje = _gasto_mes_subte(viajes)

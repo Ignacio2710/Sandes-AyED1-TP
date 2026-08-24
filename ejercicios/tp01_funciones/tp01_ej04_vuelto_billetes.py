@@ -1,13 +1,44 @@
+# TP01 - Ejercicio 04
+# Calcula el vuelto de una compra usando la menor cantidad de billetes.
 
-def _billetes (dinero, compra):
+def _ingresar_entero_no_negativo(mensaje: str) -> int:
+    
+    """
+    Contrato:
+        Pide al usuario un numero entero mayor o igual a cero hasta que se ingrese uno valido.
+    
+    Precondiciones:
+        El mensaje debe ser una cadena de texto.
+
+    Postcondiciones:
+        Devuelve un entero no negativo ingresado por el usuario.
+    """
+    while True:
+        try:
+            numero = int(input(mensaje))
+
+            if numero >= 0:
+                return numero
+
+            print("Error: el monto no puede ser negativo")
+
+        except ValueError:
+            print("Error: se tiene que ingresar un numero entero.")
+
+
+def _billetes(dinero: int, compra: int) -> None:
 
     """
-    Contrato: Esta funcion recibira el total de una compra y el dinero que se recibe del cliente, y va a calcular el vuelto usando el menor numero de billetes posibles
-    Precondiciones: La compra y el dinero que se reciben tiene que ser numeros enteros y positivos. El valor de billetes son: $5000, $1000, $500, $200, $100, $50, $10.
-    Postcondiciones: La funcion va a mostrar por pantalla el total del vuelto y la cantidad de billetes de cada valor que son entregados. Si el dinero es insuficiente
-    muestra mensaje de error, si el cambio no puede entregarse con los valores de dinero disponibles muestra mensaje de error y el sobrante.
+    Contrato: 
+        Esta funcion recibira el total de una compra y el dinero que se recibe del cliente, y va a calcular el vuelto usando el menor numero de billetes posibles
+    
+    Precondiciones: 
+        La compra y el dinero que se reciben tienen que ser numeros enteros y positivos. El valor de billetes son: $5000, $1000, $500, $200, $100, $50, $10.
+    
+    Postcondiciones: 
+        La funcion va a mostrar por pantalla el total del vuelto y la cantidad de billetes de cada valor que son entregados. Si el dinero es insuficiente
+        muestra mensaje de error, si el cambio no puede entregarse con los valores de dinero disponibles muestra mensaje de error y el sobrante.
     """
-
 
     billete_5000 = 5000
     billete_1000 = 1000
@@ -17,12 +48,12 @@ def _billetes (dinero, compra):
     billete_50 = 50
     billete_10 = 10
 
-    vuelto = dinero - compra
-
     if dinero < compra:
-        return print("Falta dinero para realizar tu compra: ")
+        return print(f"Falta dinero para realizar tu compra: ${compra - dinero}.")
     
     else:
+        vuelto = dinero - compra
+
         total_vuelto = vuelto
 
         vuelto_5000 = vuelto // billete_5000 
@@ -60,16 +91,21 @@ def _billetes (dinero, compra):
         print(f"Billetes de $10: {vuelto_10}")
 
 
-def main () -> None:
+def main() -> None:
 
     """
-    Contrato: Esta funcion solicita al usuario el total de la compra y dinero con el que paga para calcular el vuelto.
-    Precondiciones: Se debe ejecutar el programa como programa principal.
-    Postcondiciones: Se muestra por pantalla el total del vuelto y la cantidad de billetes de cada valor que se entregan, 
-    o un mensaje de error si no es posible entregar dicho cambio.
+    Contrato: 
+        Esta funcion solicita al usuario el total de la compra y dinero con el que paga para calcular el vuelto.
+    
+    Precondiciones: 
+        Se debe ejecutar el programa como programa principal.
+    
+    Postcondiciones: 
+        Se muestra por pantalla el total del vuelto y la cantidad de billetes de cada valor que se entregan, 
+        o un mensaje de error si no es posible entregar dicho cambio.
     """
-    compra = int(input("El dinero de la compra es: "))
-    dinero = int(input("Ingresa con el dinero que se pagara: "))
+    compra = _ingresar_entero_no_negativo("El dinero de la compra es: ")
+    dinero = _ingresar_entero_no_negativo("Ingresa el dinero con el que se pagara: ")
 
     _billetes(dinero, compra)
 
