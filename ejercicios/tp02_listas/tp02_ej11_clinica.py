@@ -156,7 +156,7 @@ def _buscar_afiliados(urgencias: list[int], turnos: list[int]) -> None:
         if por_urgencia == 0 and por_turno == 0:
             print(f"El afiliado {afiliado} no fue atendido")
         else:
-            print(f"El afiliado {afiliado} fue atendido {_en_veces(por_urgencia)} por urgencia" 
+            print(f"El afiliado {afiliado} fue atendido {_en_veces(por_urgencia)} por urgencia " 
                   f"y {_en_veces(por_turno)} por turno.")
 
         afiliado = _ingresar_afiliado(f"Afiliado a buscar ({FIN} para terminar): ")

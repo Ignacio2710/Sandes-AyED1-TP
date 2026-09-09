@@ -1,27 +1,42 @@
 # TP02 - Ejercicio 04
 # Elimina de una lista de numeros enteros los valores que aparecen en una segunda lista, modifica la lista original sin crear una copia.
 
-def _ingresar_entero(mensaje: str, minimo: int | None = None) -> int:
+def _ingresar_entero(mensaje: str) -> int:
     """
     contrato:
         solicita al usuario un numero entero hasta que se ingrese uno valido.
 
     Precondiciones:
-        minimo es un numero entero o None si se acepta cualquier entero
+        no hay Se acepta cualquier entero, positivo negativo o cero
     
     Postcondiciones:
-        Devuelve el numero entero ingresado, mayor o igual al minimo cuando se indico uno.
+        Devuelve el numero entero ingresado.
     """
 
     while True:
         try:
-            numero = int(input(mensaje))
+            return int(input(mensaje))
         except ValueError:
-            print("Error: se debe ingresar un entero.")
-        else:
-            if minimo is None or numero >= minimo:
-                return numero
-            print(f"Error: el valor debe ser mayor o igual a {minimo}.")
+            print("Error: se debe ingresar un entero")
+
+
+def _ingresar_cantidad(mensaje: str, minimo: int) -> int:
+    """
+    Contrato:
+        solicita al usuario una cantidad entera mayor o igual al minimo hasta que se ingrese una valida.
+
+    Precondiciones:
+        Minimo es un entero
+
+    Postcondiciones:
+        Devuelve el numero entero ingresado, siempre mayor o igual al minimo que se recibe   
+    """
+
+    while True:
+        numero = _ingresar_entero(mensaje)
+        if numero >= minimo:
+            return numero
+        print(f"Error: el valor debe ser mayor o igual a {minimo}. ")
 
 
 def _ingresar_lista(nombre: str, cantidad: int) -> list[int]:
@@ -67,7 +82,7 @@ def _eliminar_valores(lista: list[int], a_eliminar: list[int]) -> int:
 def main() -> None:
     """
     Contrato:
-        Ejercuta el programa principal pide las dos listas muestra la lista original elimina los valores indicados y muestra la lista resultante
+        Ejecuta el programa principal pide las dos listas muestra la lista original elimina los valores indicados y muestra la lista resultante
     
     Precondiciones:
         El archivo se tiene que ejecutar como principal
@@ -76,10 +91,10 @@ def main() -> None:
         Se muestra por pantalla la lista original, la lista de valores a eliminar y la resultante
     """
 
-    cantidad_original = _ingresar_entero("Ingrese la cantidad de numeros de la lista original: ", 1)
+    cantidad_original = _ingresar_cantidad("Ingrese la cantidad de numeros de la lista original: ", 1)
     numeros = _ingresar_lista("Lista original", cantidad_original)
 
-    cantidad_a_eliminar = _ingresar_entero("Ingresar la cantidad de valores a eliminar: ", 0)
+    cantidad_a_eliminar = _ingresar_cantidad("Ingresar la cantidad de valores a eliminar: ", 0)
     a_eliminar = _ingresar_lista("Valores a eliminar", cantidad_a_eliminar)
 
     print(f"Lista original: {numeros}")

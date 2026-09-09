@@ -1,9 +1,7 @@
-# TP05 - Ejercicio 05
+# TP02 - Ejercicio 05
 # Verifica si una lista esta ordenada en forma ascendente.
 
-
-
-def _ingresar_entero(mensaje: str)-> int:
+def _ingresar_entero(mensaje: str) -> int:
     """
     contrato:
         solicita al usuario un numero entero hasta que se ingrese uno valido.
@@ -56,7 +54,7 @@ def _ingresar_lista(cantidad: int) -> list[int]:
         lista.append(_ingresar_entero(f"Valor {posicion + 1}: "))
     return lista
 
-def _esta_ordenada(lista: int) -> bool:
+def _esta_ordenada(lista: list) -> bool:
     """
     Contrato:
         Determina si los elementos de la lista estan ordenados en forma ascendente.
@@ -104,7 +102,7 @@ def main() -> None:
     _mostrar_resultado(["b", "a"])
 
     print()
-    cantidad = _ingresar_entero("Ingrese la cantidad de numeros de su lista: ", 0)
+    cantidad = _ingresar_cantidad("Ingrese la cantidad de numeros de su lista: ", 0)
     numeros = _ingresar_lista(cantidad)
 
     print(f"Lista ingresada: {numeros}")
