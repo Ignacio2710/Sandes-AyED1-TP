@@ -22,20 +22,19 @@ def _ingresar_entero(mensaje: str) -> int:
             print("Error: se tiene que ingresar un numero entero")
 
 
-es_oblongo: Callable[[int], bool] = lambda numero: round((1 + 4 * numero) ** 0.5) ** 2 == 1 + 4 * numero if numero > 0 else False
-
+es_oblongo: Callable[[int], bool] = lambda numero: numero > 0 and round((1 + 4 * numero) ** 0.5) ** 2 == 1 + 4 * numero
 """
-Contrato:
-    Va a recibir un numero y determinar si es oblongo, osea si se puede obtener multiplicnado dos numeros naturales consecutivos.
+    Contrato:
+        Va a recibir un numero y determinar si es oblongo, osea si se puede obtener multiplicnado dos numeros naturales consecutivos.
 
-Precondiciones:
-    Numero debe ser un numero entero.
+    Precondiciones:
+        Numero debe ser un numero entero.
 
-Postcondiciones:
-    Devuelve True si el numero es oblongo y False en caso contrario.
+    Postcondiciones:
+        Devuelve True si el numero es oblongo y False en caso contrario.
 """
 
-es_triangular: Callable[[int], bool] = lambda numero: round((1 + 8 * numero) ** 0.5) ** 2 == 1 + 8 * numero if numero > 0 else False
+es_triangular: Callable[[int], bool] = lambda numero: numero > 0 and round((1 + 8 * numero) ** 0.5) ** 2 == 1 + 8 * numero
 
 """
 Contrato:

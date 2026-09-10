@@ -53,6 +53,7 @@ def _es_bisiesto(año: int) -> bool:
 
     return False
 
+
 def _dias_del_mes(mes: int, año: int) -> int:
     """
     Contrato:
@@ -80,6 +81,7 @@ def _dias_del_mes(mes: int, año: int) -> int:
 
     return 28
 
+
 def _imprimir_mes(inicio_dia: int, dias: int, mes: int, año: int) -> None:
     """
     Contrato:
@@ -98,7 +100,7 @@ def _imprimir_mes(inicio_dia: int, dias: int, mes: int, año: int) -> None:
     columna = 0
 
     while columna < inicio_dia:
-        print(f"{" ":>2}", end = " ")
+        print("  ", end = " ")
         columna = columna + 1
 
     dia = 1
@@ -118,6 +120,7 @@ def _imprimir_mes(inicio_dia: int, dias: int, mes: int, año: int) -> None:
 
     return None 
 
+
 def _pedir_entero(mensaje: str) -> int:
     """
     Contrato:
@@ -135,6 +138,7 @@ def _pedir_entero(mensaje: str) -> int:
             return int(input(mensaje))
         except ValueError:
             print("Error: se tiene que ingresar un entero")
+
 
 def _pedir_mes() -> int:
     """
@@ -155,6 +159,7 @@ def _pedir_mes() -> int:
 
         print("Error: el mes tiene que ser entre 1 y 12")
 
+
 def _pedir_año() -> int:
     """
     Contrato:
@@ -174,6 +179,7 @@ def _pedir_año() -> int:
             return año
 
         print("Error: El año tiene que ser entre 1 y 9999")
+
 
 def main() -> None:
     """

@@ -29,6 +29,7 @@ def _pedir_entero(mensaje: str) -> int:
         except ValueError:
             print("Error: se tiene que ingresar un entero")
 
+
 def _ingresar_entero_positivo(mensaje: str) -> int:
     """
     Contrato:
@@ -153,6 +154,7 @@ def _reparto(cosecha: int, camiones_disponibles: int) -> None:
     _mostrar_informacion(cosecha, jugo, cajones, sobrante, camiones_despachados, camiones_disponibles)
 
     return None
+
 
 def _mostrar_informacion(cosecha: int, jugo: int, cajones: int, sobrante: int, camiones_despachados: int, camiones_disponibles: int) -> None:
 
